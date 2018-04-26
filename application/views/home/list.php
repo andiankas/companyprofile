@@ -58,21 +58,21 @@
 						<img class="rounded-circle" src="<?php echo base_url() ?>assets/template/img/service04.png" alt="Generic placeholder image" width="140" height="140">
 						<h3>Content Strategy</h3>
 						<br><br>
-						<p><a class="btn btn-outline-info" href="profile.html" role="button">View details &raquo;</a></p>
+						<p><a class="btn btn-outline-info" href="<?php echo base_url('layanan/read') ?>" role="button">View details &raquo;</a></p>
 					</div>
 					<!-- /.col-lg-4 -->
 					<div class="col-lg-4">
 						<img class="rounded-circle" src="<?php echo base_url() ?>assets/template/img/service03.png" alt="Generic placeholder image" width="140" height="140">
 						<h3>Search Marketing</h3>
 						<br><br>
-						<p><a class="btn btn-outline-info" href="profile.html" role="button">View details &raquo;</a></p>
+						<p><a class="btn btn-outline-info" href="<?php echo base_url('layanan/read') ?>" role="button">View details &raquo;</a></p>
 					</div>
 					<!-- /.col-lg-4 -->
 					<div class="col-lg-4">
 						<img class="rounded-circle" src="<?php echo base_url() ?>assets/template/img/sercvice01.png" alt="Generic placeholder image" width="140" height="140">
 						<h3>Optimization</h3>
 						<br><br>
-						<p><a class="btn btn-outline-info" href="profile.html" role="button">View details &raquo;</a></p>
+						<p><a class="btn btn-outline-info" href="<?php echo base_url('layanan/read') ?>" role="button">View details &raquo;</a></p>
 					</div>
 					<!-- /.col-lg-4 -->
 				</div>
