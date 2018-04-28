@@ -1,3 +1,12 @@
+<?php
+
+  // ambbil data user berdasarkan data loginnya
+  $id_user = $this->session->userdata('id_user');
+
+  $user_aktif = $this->user_model->detail($id_user);
+
+?>
+
 <header class="main-header">
     <!-- Logo -->
     <a href="<?php echo base_url('admin/dashboard') ?>" class="logo">
@@ -23,7 +32,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url() ?>assets/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">User</span>
+              <span class="hidden-xs"><?php echo $user_aktif->nama; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -31,8 +40,8 @@
                 <img src="<?php echo base_url() ?>assets/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  User - Level akses
-                  <small>Member since Nov. 2012</small>
+                  <?php echo $user_aktif->nama; ?> - <?php echo $user_aktif->akses_level; ?>
+                  <small>Member Updated : <?php echo date('d M Y',strtotime($user_aktif->tanggal)) ?></small>
                 </p>
               </li>
               

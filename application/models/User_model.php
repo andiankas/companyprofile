@@ -9,6 +9,7 @@ class User_model extends CI_Model {
 		parent::__construct();
 		//Do your magic here
 		$this->load->database(); //load database
+		$this->load->model('User_model');
 	}
 
 	public function listing()
@@ -47,6 +48,19 @@ class User_model extends CI_Model {
 		$this->db->where('id_user', $data['id_user']);
 		$this->db->delete('user', $data);
 	}
+
+	public function login($username,$password)
+	{
+		$this->db->select('*');
+		$this->db->from('user');
+		$this->db->where(array(
+			'username' => $username,
+			'password' => sha1($password)
+		));
+		$this->db->order_by('id_user');
+		$query = $this->db->get();
+		return $query->row();
+	}	
 
 
 }
