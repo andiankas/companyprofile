@@ -1,5 +1,8 @@
 <?php
 
+// proteksi halaman
+$this->check_login->check();
+
 // Menggabungkan semua bagian layout
 
 require_once('head.php');
