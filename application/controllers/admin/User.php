@@ -123,6 +123,9 @@ class User extends CI_Controller {
 
 	public function delete($id_user)
 	{
+		// proteksi delete
+		$this->check_login->check();
+
 		$user = $this->user_model->detail($id_user);
 		$data = array('id_user' 	=>	$user->id_user);
 		$this->user_model->delete($data);
