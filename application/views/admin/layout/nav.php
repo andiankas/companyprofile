@@ -13,6 +13,24 @@
           <a href="<?php echo base_url('admin/dashboard') ?>"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
         </li>
 
+        <!-- menu berita -->
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-newspaper-o"></i> <span>Berita / Profile </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('admin/berita') ?>"><i class="fa fa-table"></i> Data Berita / Profile </a></li>
+            <li><a href="<?php echo base_url('admin/berita/tambah') ?>"><i class="fa fa-plus"></i> Tambah Berita / Profile</a></li>
+            <li><a href="<?php echo base_url('admin/kategori') ?>"><i class="fa fa-tags"></i> Kategori Berita</a></li>
+          </ul>
+        </li>
+      
+        <!-- end menu berita -->
+
+        <!-- menu user -->
         <li class="treeview">
           <a href="#">
             <i class="fa fa-lock"></i> <span>User Administrator</span>
@@ -26,6 +44,7 @@
           </ul>
         </li>
       </ul>
+      <!-- end menu user -->
     </section>
     <!-- /.sidebar -->
   </aside>
