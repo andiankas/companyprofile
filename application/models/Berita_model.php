@@ -20,7 +20,7 @@ class Berita_model extends CI_Model {
 		$this->db->join('kategori', 'kategori.id_kategori = berita.id_kategori', 'LEFT');
 		$this->db->join('user', 'user.id_user = berita.id_user', 'LEFT');
 		// end join
-		$this->db->order_by('id_berita');
+		$this->db->order_by('id_berita','DESC');
 		$query = $this->db->get();
 		return $query->result();
 
