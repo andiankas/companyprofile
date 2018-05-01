@@ -12,6 +12,25 @@
         <li>
           <a href="<?php echo base_url('admin/dashboard') ?>"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
         </li>
+        
+        <!-- menu konfigurasi -->
+        <?php if ($this->session->userdata('akses_level') == "Admin") : ?>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-cog"></i> <span> Konfigurasi </span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('admin/konfigurasi') ?>"><i class="fa fa-table"></i> Konfigurasi Umum </a></li>
+            <li><a href="<?php echo base_url('admin/konfigurasi/logo') ?>"><i class="fa fa-image"></i> Konfigurasi Logo</a></li>
+            <li><a href="<?php echo base_url('admin/konfigurasi/icon') ?>"><i class="fa fa-plus"></i> Konfigurasi Icon</a></li>
+          </ul>
+        </li>
+        <?php endif; ?>
+        <!-- end menu konfigurasi -->
+
 
         <!-- menu berita -->
         <li class="treeview">
@@ -29,6 +48,8 @@
         </li>
       
         <!-- end menu berita -->
+
+
 
         <!-- menu layanan -->
         <li class="treeview">
