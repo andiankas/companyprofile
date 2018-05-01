@@ -30,6 +30,22 @@
       
         <!-- end menu berita -->
 
+        <!-- menu layanan -->
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-dollar"></i> <span> Layanan</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('admin/layanan') ?>"><i class="fa fa-table"></i> Data Layanan</a></li>
+            <li><a href="<?php echo base_url('admin/layanan/tambah') ?>"><i class="fa fa-plus"></i> Tambah Layanan</a></li>
+          </ul>
+        </li>
+      
+        <!-- end menu layanan -->
+
         <!-- menu user -->
         <li class="treeview">
           <a href="#">
