@@ -27,6 +27,22 @@ class Galeri_model extends CI_Model {
 
 	}
 
+	public function slider()
+	{
+		$this->db->select('galeri.*,user.nama');
+		$this->db->from('galeri');
+		// join
+		$this->db->join('user', 'user.id_user = galeri.id_user', 'LEFT');
+		// end join
+		$this->db->where('posisi_galeri', 'Homepage');
+		$this->db->order_by('id_galeri','DESC');
+		$this->db->limit(4);
+		$query = $this->db->get();
+		return $query->result();
+		
+
+	}
+
 	public function tambah($data)
 	{
 		$this->db->insert('galeri', $data);

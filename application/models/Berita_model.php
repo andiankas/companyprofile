@@ -26,6 +26,23 @@ class Berita_model extends CI_Model {
 
 	}
 
+	public function home()
+	{
+		$this->db->select('berita.*,kategori.nama_kategori, kategori.slug_kategori,user.nama');
+		$this->db->from('berita');
+		// join
+		$this->db->join('kategori', 'kategori.id_kategori = berita.id_kategori', 'LEFT');
+		$this->db->join('user', 'user.id_user = berita.id_user', 'LEFT');
+		// end join
+		$this->db->where(array('status_berita' => 'Publish',
+								'jenis_berita' => 'Berita'));
+		$this->db->order_by('id_berita','DESC');
+		$this->db->limit(9);
+		$query = $this->db->get();
+		return $query->result();
+
+	}
+
 	public function tambah($data)
 	{
 		$this->db->insert('berita', $data);

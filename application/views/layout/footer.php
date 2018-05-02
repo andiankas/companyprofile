@@ -1,7 +1,13 @@
+<?php 
+// site dari konfigurasi
+$site_info = $this->konfigurasi_model->listing();
+
+ ?>
+
 <!-- FOOTER -->
 			<footer class="container">
 				
-				<p>&copy; <?php echo date('Y'); ?> MassiveUp -  
+				<p>&copy; <?php echo date('Y'); ?> <?php echo $site_info->namaweb; ?> -  
 				<a href="<?php echo base_url('profile') ?>">About</a> | 
 				<a href="<?php echo base_url('layanan') ?>">Services</a> |
 				<a href="<?php echo base_url('contact') ?>">Contact</a> |

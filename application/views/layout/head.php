@@ -1,3 +1,9 @@
+<?php 
+// site dari konfigurasi
+$site_info = $this->konfigurasi_model->listing();
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -6,11 +12,11 @@
 		<title><?php echo $title; ?></title>
 		
 		<!-- icon -->
-		<link rel="shortcut icon" href="<?php echo base_url() ?>assets/template/img/icon.png">
+		<link rel="shortcut icon" href="<?php echo base_url('assets/upload/image/thumbs/'.$site_info->icon) ?>">
 		<!-- description -->
-		<meta name="description" content="<?php echo $title; ?>">
+		<meta name="description" content="<?php echo $site_info->deskripsi; ?>">
 		<!-- keywords -->
-		<meta name="keywords" content="<?php echo $title; ?>">
+		<meta name="keywords" content="<?php echo $title.', '.$site_info->keywords; ?>">
 		<!-- author -->
 		<meta name="author" content="<?php echo $title; ?>">
 		<!-- CSS Booststrap -->

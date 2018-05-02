@@ -6,36 +6,26 @@
 					<li data-target="#myCarousel" data-slide-to="2"></li>
 				</ol>
 				<div class="carousel-inner">
-					<div class="carousel-item active">
-						<img class="first-slide" src="<?php echo base_url() ?>assets/template/img/banner001.jpg" alt="First slide">
+					<!-- foreach -->
+					<?php
+
+						$i = 1;
+						foreach ($slider as $slider) {
+					?>
+					
+					<div class="carousel-item <?php if($i==1) { echo 'active'; }?>">
+						<img class="first-slide" src="<?php echo base_url('assets/upload/image/'.$slider->gambar) ?>" alt="<?php echo $slider->judul_galeri ?>">
 						<div class="container">
 							<div class="carousel-caption text-left">
-								<h1>Example headline.</h1>
-								<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-								<p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+								<h1><?php echo $slider->judul_galeri ?></h1>
+								<p><?php echo strip_tags($slider->judul_galeri) ?></p>
+								<p><a class="btn btn-lg btn-primary" href="<?php echo $slider->website ?>" role="button">Sign up today</a></p>
 							</div>
 						</div>
 					</div>
-					<div class="carousel-item">
-						<img class="second-slide" src="<?php echo base_url() ?>assets/template/img/banner002.jpg" alt="Second slide">
-						<div class="container">
-							<div class="carousel-caption">
-								<h1>Another example headline.</h1>
-								<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-								<p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-							</div>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<img class="third-slide" src="<?php echo base_url() ?>assets/template/img/banner003.jpg" alt="Third slide">
-						<div class="container">
-							<div class="carousel-caption text-right">
-								<h1>One more for good measure.</h1>
-								<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-								<p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-							</div>
-						</div>
-					</div>
+
+					<?php $i++; } ?> 
+					<!-- end foreach -->
 				</div>
 				<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -54,27 +44,19 @@
 				<center><h2>Services</h2></center>
 				<br><br>
 				<div class="row">
+					<?php
+
+						foreach ($layanan as $layanan) {
+					?>
 					<div class="col-lg-4">
-						<img class="rounded-circle" src="<?php echo base_url() ?>assets/template/img/service04.png" alt="Generic placeholder image" width="140" height="140">
-						<h3>Content Strategy</h3>
+						<img class="rounded-circle" src="<?php echo base_url('assets/upload/image/thumbs/'.$layanan->gambar) ?>" alt="<?php echo $layanan->judul_layanan ?>" width="140" height="140">
 						<br><br>
-						<p><a class="btn btn-outline-info" href="<?php echo base_url('layanan/read') ?>" role="button">View details &raquo;</a></p>
+						<h3><?php echo $layanan->judul_layanan; ?></h3>
+						<br><br>
+						<p><a class="btn btn-outline-info" href="<?php echo base_url('layanan') ?>" role="button">View details &raquo;</a></p>
 					</div>
 					<!-- /.col-lg-4 -->
-					<div class="col-lg-4">
-						<img class="rounded-circle" src="<?php echo base_url() ?>assets/template/img/service03.png" alt="Generic placeholder image" width="140" height="140">
-						<h3>Search Marketing</h3>
-						<br><br>
-						<p><a class="btn btn-outline-info" href="<?php echo base_url('layanan/read') ?>" role="button">View details &raquo;</a></p>
-					</div>
-					<!-- /.col-lg-4 -->
-					<div class="col-lg-4">
-						<img class="rounded-circle" src="<?php echo base_url() ?>assets/template/img/sercvice01.png" alt="Generic placeholder image" width="140" height="140">
-						<h3>Optimization</h3>
-						<br><br>
-						<p><a class="btn btn-outline-info" href="<?php echo base_url('layanan/read') ?>" role="button">View details &raquo;</a></p>
-					</div>
-					<!-- /.col-lg-4 -->
+					<?php } ?>
 				</div>
 				<!-- /.row -->
 				
@@ -83,71 +65,24 @@
 			<div class="album py-5 bg-light">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-4">
-							<div class="card mb-4 box-shadow">
-								<img class="card-img-top" src="<?php echo base_url() ?>assets/template/img/design002.png" alt="Card image cap">
-								<div class="card-body">
-									<h3><a href="<?php echo base_url('berita/read') ?>">Judul Artikel</a></h3>
-									<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-									<p class="text-right"><a href="<?php echo base_url('berita/read') ?>" class="btn btn-outline-info">Read More...</a></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="card mb-4 box-shadow">
-								<img class="card-img-top" src="<?php echo base_url() ?>assets/template/img/design002.png" alt="Card image cap">
-								<div class="card-body">
-									<h3><a href="<?php echo base_url('berita/read') ?>">Judul Artikel</a></h3>
-									<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-									<p class="text-right"><a href="<?php echo base_url('berita/read') ?>" class="btn btn-outline-info">Read More...</a></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="card mb-4 box-shadow">
-								<img class="card-img-top" src="<?php echo base_url() ?>assets/template/img/design002.png" alt="Card image cap">
-								<div class="card-body">
-									<h3><a href="<?php echo base_url('berita/read') ?>">Judul Artikel</a></h3>
-									<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-									<p class="text-right"><a href="<?php echo base_url('berita/read') ?>" class="btn btn-outline-info">Read More...</a></p>
-								</div>
-							</div>
-						</div>
-						
-					</div>
-					<div class="row">
-						<div class="col-md-4">
-							<div class="card mb-4 box-shadow">
-								<img class="card-img-top" src="<?php echo base_url() ?>assets/template/img/design002.png" alt="Card image cap">
-								<div class="card-body">
-									<h3><a href="<?php echo base_url('berita/read') ?>">Judul Artikel</a></h3>
-									<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-									<p class="text-right"><a href="<?php echo base_url('berita/read') ?>" class="btn btn-outline-info">Read More...</a></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="card mb-4 box-shadow">
 
-								<img class="card-img-top" src="<?php echo base_url() ?>assets/template/img/design002.png" alt="Card image cap">
-								<div class="card-body">
-									<h3><a href="<?php echo base_url('berita/read') ?>">Judul Artikel</a></h3>
-									<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-									<p class="text-right"><a href="<?php echo base_url('berita/read') ?>" class="btn btn-outline-info">Read More...</a></p>
-								</div>
-							</div>
-						</div>
+						<?php 
+							foreach ($berita as $berita) {
+									
+						 ?>
 						<div class="col-md-4">
 							<div class="card mb-4 box-shadow">
-								<img class="card-img-top" src="<?php echo base_url() ?>assets/template/img/design002.png" alt="Card image cap">
+								<img class="card-img-top" src="<?php echo base_url('assets/upload/image/thumbs/'.$berita->gambar) ?>" alt="Card image cap">
 								<div class="card-body">
-									<h3><a href="<?php echo base_url('berita/read') ?>">Judul Artikel</a></h3>
-									<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-									<p class="text-right"><a href="<?php echo base_url('berita/read') ?>" class="btn btn-outline-info">Read More...</a></p>
+									<h3><a href="<?php echo base_url('berita/read/'.$berita->slug_berita) ?>"><?php echo $berita->judul_berita; ?></a></h3>
+									<p class="card-text"><?php echo character_limiter(strip_tags($berita->isi_berita), 150); ?></p>
+									<p class="text-right"><a href="<?php echo base_url('berita/read/'.$berita->slug_berita) ?>" class="btn btn-outline-info">Read More...</a></p>
 								</div>
 							</div>
 						</div>
 						
-					</div>	
+						<?php } ?>
+					</div>
+					
 				</div>
 			</div>

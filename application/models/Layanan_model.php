@@ -25,6 +25,21 @@ class Layanan_model extends CI_Model {
 
 	}
 
+	public function home()
+	{
+		$this->db->select('layanan.*,user.nama');
+		$this->db->from('layanan');
+		// join
+		$this->db->join('user', 'user.id_user = layanan.id_user', 'LEFT');
+		// end join
+		$this->db->where('layanan.status_layanan', 'Publish');
+		$this->db->order_by('id_layanan','DESC');
+		$this->db->limit(3);
+		$query = $this->db->get();
+		return $query->result();
+
+	}
+
 	public function tambah($data)
 	{
 		$this->db->insert('layanan', $data);

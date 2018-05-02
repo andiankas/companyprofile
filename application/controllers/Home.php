@@ -11,24 +11,25 @@ class Home extends CI_Controller {
 		$this->load->model('konfigurasi_model');
 		$this->load->model('layanan_model');
 		$this->load->model('galeri_model');
+		$this->load->model('user_model');
 
 	}
 
 	public function index()
 	{
 		$konfigurasi = $this->konfigurasi_model->listing();
-		// $slider = $this->galeri_model->slider();
+		$slider = $this->galeri_model->slider();
 		$layanan = $this->layanan_model->home();
 		$berita = $this->berita_model->home();
 
 		$data = array(
-			'title' 	=>		$konfigurasi->namaweb.' - '.$konfigurasi->tagline,
-			'keywords' => 		$konfigurasi->namaweb.' - '.$konfigurasi->tagline.', '.$konfigurasi->keywords,
-			'deskripsi' => 		$konfigurasi->deskripsi,
-			// 'slider' => 		$slider,
-			'layanan' => 		$layanan,
-			'berita' => 		$berita,
-			'isi' 		=>		'home/list' 
+			'title' 		=>		$konfigurasi->namaweb.' - '.$konfigurasi->tagline,
+			'keywords' 		=> 		$konfigurasi->namaweb.' - '.$konfigurasi->tagline.', '.$konfigurasi->keywords,
+			'deskripsi' 	=> 		$konfigurasi->deskripsi,
+			'slider' 		=> 		$slider,
+			'layanan' 		=> 		$layanan,
+			'berita' 		=> 		$berita,
+			'isi' 			=>		'home/list' 
 		);
 		$this->load->view('layout/wrapper', $data);		
 	}
