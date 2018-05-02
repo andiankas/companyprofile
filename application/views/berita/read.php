@@ -5,11 +5,9 @@
 					<div class="row artikel">
 						<div class="col-md-8">
 							<div class="artikel">
-								<h1>Judul Berita</h1>
-								<p><img src="<?php echo base_url() ?>assets/template/img/design002.png" alt="gambar" class="img img-thumbnail img-responsive"></p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex doloribus dolore cum, voluptatibus, aut nulla officiis rem aliquam illum ratione excepturi eligendi nihil sed. Delectus laboriosam vero maiores odit enim!</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex doloribus dolore cum, voluptatibus, aut nulla officiis rem aliquam illum ratione excepturi eligendi nihil sed. Delectus laboriosam vero maiores odit enim!</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex doloribus dolore cum, voluptatibus, aut nulla officiis rem aliquam illum ratione excepturi eligendi nihil sed. Delectus laboriosam vero maiores odit enim!</p>
+								<h1><?php echo $berita->judul_berita ?></h1>
+								<p><img src="<?php echo base_url('assets/upload/image/'.$berita->gambar) ?>" alt="<?php echo $berita->judul_berita ?>" class="img img-thumbnail img-responsive"></p>
+								<?php echo $berita->isi_berita; ?>
 							</div>
 
 							<br>
@@ -39,23 +37,19 @@
 							<center><h4>Berita Lainnya</h4></center>
 							<hr>
 							<div class="row">
+								
+								<?php foreach ($listing as $listing) : ?>
+
 								<div class="col-md-12">
 									<div class="artikel">
-										<p><img src="<?php echo base_url() ?>assets/template/img/design002.png" alt="gambar" class="img img-thumbnail img-responsive"></p>
-										<a href="<?php echo base_url('berita/read') ?>"><h4>Judul Berita</h4></a>
+										<p><img src="<?php echo base_url('assets/upload/image/'.$listing->gambar) ?>" alt="<?php echo $listing->judul_berita ?>" class="img img-thumbnail img-responsive"></p>
+										<a href="<?php echo base_url('berita/read/'.$listing->slug_berita) ?>"><h4><?php echo $listing->judul_berita ?></h4></a>
 										<hr>
 									</div>
-									<div class="artikel">
-										<p><img src="<?php echo base_url() ?>assets/template/img/design002.png" alt="gambar" class="img img-thumbnail img-responsive"></p>
-										<a href="<?php echo base_url('berita/read') ?>"><h4>Judul Berita</h4></a>
-										<hr>
-									</div>
-									<div class="artikel">
-										<p><img src="<?php echo base_url() ?>assets/template/img/design002.png" alt="gambar" class="img img-thumbnail img-responsive"></p>
-										<a href="<?php echo base_url('berita/read') ?>"><h4>Judul Berita</h4></a>
-										<hr>
-									</div>
+									
 								</div>
+
+								<?php endforeach; ?>
 								
 							</div>
 							

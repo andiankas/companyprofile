@@ -32,10 +32,20 @@ class kategori_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('kategori');
 		$this->db->where('id_kategori',$id_kategori);
-		$this->db->order_by('id_kategori');
+		$this->db->order_by('id_kategori','DESC');
 		$query = $this->db->get();
 		return $query->row();
-	}	
+	}
+
+	public function read($slug_kategori)
+	{
+		$this->db->select('*');
+		$this->db->from('kategori');
+		$this->db->where('slug_kategori',$slug_kategori);
+		$this->db->order_by('slug_kategori');
+		$query = $this->db->get();
+		return $query->row();
+	}
 
 	public function edit($data)
 	{

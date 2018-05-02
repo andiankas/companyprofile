@@ -19,10 +19,12 @@
 					</div>
 					<!-- pagination -->
 					<div class="row">
+						<?php if (isset($paginasi)) : ?>
 						<div class="paginasi col-md-12 text-center">
-							<?php if (isset($paginasi)) { echo $paginasi; } ?>
+							 <?php echo $paginasi; ?>
 							<div class="clearfix"></div>
 						</div>
+						<?php endif; ?>
 					</div>
 				</div>	
 			</div>	
