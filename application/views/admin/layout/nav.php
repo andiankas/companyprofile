@@ -67,6 +67,22 @@
       
         <!-- end menu layanan -->
 
+         <!-- menu galeri -->
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-image"></i> <span> Galeri</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('admin/galeri') ?>"><i class="fa fa-table"></i> Data Galeri</a></li>
+            <li><a href="<?php echo base_url('admin/galeri/tambah') ?>"><i class="fa fa-plus"></i> Tambah Galeri</a></li>
+          </ul>
+        </li>
+      
+        <!-- end menu galeri -->
+
         <!-- menu user -->
         <li class="treeview">
           <a href="#">
